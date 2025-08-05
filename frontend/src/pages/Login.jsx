@@ -11,7 +11,7 @@ export default function LoginPage() {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:5000/api/login", {
+      const res = await axios.post("https://linkdeinclone.onrender.com/api/login", {
         email,
         password,
       });
@@ -73,3 +73,4 @@ export default function LoginPage() {
     </div>
   );
 }
+
