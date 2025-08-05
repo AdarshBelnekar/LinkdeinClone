@@ -15,7 +15,7 @@ const handleRegister = async (e) => {
   try {
     const response = await axios.post('https://linkdeinclone.onrender.com/api/register', form);
     alert('Registration successful!');
-    window.location.href = '/login';
+    window.location.href = '/';
   } catch (error) {
     console.error('Error registering:', error);
     alert(error.response?.data?.message || 'Something went wrong');
@@ -76,4 +76,5 @@ const handleRegister = async (e) => {
     </div>
   );
 }
+
 
