@@ -11,7 +11,7 @@ const Home = () => {
   const fetchUser = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:5000/api/register", {
+      const res = await axios.get("https://linkdeinclone.onrender.com/api/register", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUser(res.data.user);
@@ -22,7 +22,7 @@ const Home = () => {
 
   const fetchPosts = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/");
+      const res = await axios.get("https://linkdeinclone.onrender.com/api/");
       setPosts(res.data.posts);
     } catch (err) {
       console.error("Error loading posts", err);
@@ -35,7 +35,7 @@ const Home = () => {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.post(
-        "http://localhost:5000/api/",
+        "https://linkdeinclone.onrender.com/api/",
         { content: newContent },
         {
           headers: {
@@ -55,7 +55,7 @@ const Home = () => {
     if (!token) return;
 
     try {
-      const res = await fetch("http://localhost:5000/api/user", {
+      const res = await fetch("https://linkdeinclone.onrender.com/api/user", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -123,3 +123,4 @@ const Home = () => {
 };
 
 export default Home;
+
