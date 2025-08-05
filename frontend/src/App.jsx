@@ -1,22 +1,34 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
 
-const App = () => {
-  const isLoggedIn = true; // Set to false to simulate logout
+const Layout = () => {
+  const location = useLocation();
+  const hideNavbarOn = ["/", "/register"];
+  const shouldShowNavbar = !hideNavbarOn.includes(location.pathname);
+
+  const isLoggedIn = true; // You can replace this with auth logic
 
   return (
-    <Router>
-      <Navbar isLoggedIn={isLoggedIn} />
+    <>
+      {shouldShowNavbar && <Navbar isLoggedIn={isLoggedIn} />}
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
+    </>
+  );
+};
+
+const App = () => {
+  return (
+    <Router>
+      <Layout />
     </Router>
   );
 };
