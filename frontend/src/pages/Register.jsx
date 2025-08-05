@@ -68,7 +68,7 @@ const handleRegister = async (e) => {
         </button>
         <p className="text-sm text-gray-600 text-center">
           Already a member?{' '}
-          <a href="/login" className="text-blue-600 hover:underline">
+          <a href="/" className="text-blue-600 hover:underline">
             Sign in
           </a>
         </p>
@@ -76,5 +76,6 @@ const handleRegister = async (e) => {
     </div>
   );
 }
+
 
 
