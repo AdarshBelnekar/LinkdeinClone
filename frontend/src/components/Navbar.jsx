@@ -21,17 +21,17 @@ const Navbar = ({ isLoggedIn }) => {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
-    navigate("/login");
+    navigate("/");
   };
 
   return (
     <nav className="flex items-center justify-between px-6 py-3 shadow-md bg-white relative">
-      <Link to="/" className="text-xl font-bold text-blue-700">
+      <Link to="/home" className="text-xl font-bold text-blue-700">
         <h1>LinkdeinClone</h1>
       </Link>
 
       <div className="flex items-center gap-6">
-        <Link to="/" className="text-gray-700 hover:text-blue-600">
+        <Link to="/home" className="text-gray-700 hover:text-blue-600">
           <FaHome size={20} />
         </Link>
 
@@ -79,3 +79,4 @@ const Navbar = ({ isLoggedIn }) => {
 };
 
 export default Navbar;
+
