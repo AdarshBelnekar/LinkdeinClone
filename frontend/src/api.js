@@ -2,5 +2,6 @@
 import axios from "axios";
 
 export const API = axios.create({
-  baseURL: "http://localhost:5000/api", // Correct: Express server URL
+  baseURL: "https://linkdeinclone.onrender.com/api", // Correct: Express server URL
 });
+
