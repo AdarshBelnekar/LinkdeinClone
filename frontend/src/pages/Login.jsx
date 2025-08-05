@@ -20,7 +20,7 @@ export default function LoginPage() {
         // Save token to localStorage
         localStorage.setItem("token", res.data.token);
         alert("Login successful");
-        navigate("/"); // ✅ Change to your home route
+        navigate("/home"); // 
       } else {
         alert("Login failed");
       }
@@ -73,4 +73,5 @@ export default function LoginPage() {
     </div>
   );
 }
+
 
